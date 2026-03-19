@@ -1,0 +1,92 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    min-height: 0;
+}
+
+/* Bar */
+window#waybar {
+    background-color: alpha(@surface, 0.6);
+    border-radius: 12px;
+    margin: 5px;
+}
+
+/* Modules common */
+#workspaces,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray {
+    background: @surface_container;
+    color: @on_surface;
+    padding: 6px 12px;
+    margin: 5px 3px;
+}
+
+/* Workspaces */
+#workspaces button {
+    color: @on_surface_variant;
+    padding: 4px 8px;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    background: @primary;
+    color: @on_primary;
+}
+
+#workspaces button:hover {
+    background: @surface_container_high;
+    color: @on_surface;
+}
+
+/* Clock */
+#clock {
+    color: @primary;
+    font-weight: bold;
+}
+
+/* Battery */
+#battery {
+    color: @secondary;
+}
+
+#battery.charging {
+    color: @primary;
+}
+
+#battery.warning {
+    color: @tertiary;
+}
+
+#battery.critical {
+    color: @error;
+}
+
+/* Audio */
+#pulseaudio {
+    color: @on_surface;
+}
+
+/* Network */
+#network {
+    color: @on_surface;
+}
+
+/* Tray */
+#tray {
+    padding: 6px 10px;
+}
+
+/* Hover effect for all modules */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover {
+    background: @surface_container_high;
+}
