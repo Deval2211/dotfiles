@@ -5,6 +5,14 @@
 ![Status](https://img.shields.io/badge/status-production-green)
 ![Platform](https://img.shields.io/badge/platform-Ubuntu%20%7C%20Mint%20%7C%20Kali-blue)
 
+# ✨ Hyprland Automated Theming Engine
+
+## 🎬 Preview
+![Preview](./assets/demo.gif)
+
+https://github.com/user-attachments/assets/f2e8da1c-70bb-48ed-a4d0-7d3a25e289a9
+
+
 ## ✨ Features
 
 ### 🎯 Core Capabilities
