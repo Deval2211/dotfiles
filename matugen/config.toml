@@ -1,26 +1,23 @@
-config.wallpaper]
-# Whether to set the wallpaper or not
+[config.wallpaper]
 set = false
-
-# The base command to run for applying the wallpaper.
-# Keywords like {{ image }} or anything that works inside of hooks works here.
-# You could also set a static color if you use the color keywords and the wallpaper setter supports it.
-command = "swww img --transition-type center {{ image }}"
+command = "swww img --transition-type center --transition-duration 1 --transition-fps 60 {{ image }}"
 
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+input_path = '/home/deval/.config/matugen/templates/hyprland-colors.conf'
+output_path = '/home/deval/.config/hypr/colors.conf'
 
 [templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
-
-[templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+input_path = '/home/deval/.config/matugen/templates/kitty-colors.conf'
+output_path = '/home/deval/.config/kitty/colors.conf'
 
 [templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
+input_path = '/home/deval/.config/matugen/templates/colors.css'
+output_path = '/home/deval/.config/waybar/colors.css'
 
+[templates.wofi]
+input_path = '/home/deval/.config/matugen/templates/wofi-colors.css'
+output_path = '/home/deval/.config/wofi/colors.css'
 
+[templates.gtk]
+input_path = '/home/deval/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/deval/.config/gtk-3.0/colors.css'

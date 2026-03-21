@@ -1,0 +1,70 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    margin: 0px;
+    border: 2px solid alpha(@primary, 0.9);
+    background-color: rgba(30, 30, 35, 0.95);
+    border-radius: 12px;
+}
+
+#input {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid @primary;
+    background-color: rgba(40, 40, 45, 0.98);
+    color: @on_surface;
+    border-radius: 8px;
+}
+
+#input:focus {
+    border: 2px solid @primary;
+    background-color: rgba(50, 50, 55, 0.98);
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @on_surface;
+}
+
+#entry {
+    padding: 8px;
+    margin: 4px;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#entry:hover {
+    background-color: @surface_container_high;
+}
+
+#text:selected {
+    color: @on_primary;
+}

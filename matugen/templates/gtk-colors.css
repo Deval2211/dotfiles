@@ -1,0 +1,66 @@
+/*
+* GTK Colors for Nemo
+* Generated with Matugen
+*/
+
+/* Define color variables */
+<* for name, value in colors *>
+@define-color {{name}} {{value.default.hex}};
+<* endfor *>
+
+/* Apply to GTK widgets */
+* {
+    background-color: @surface;
+    color: @on_surface;
+}
+
+.view {
+    background-color: @surface_container;
+    color: @on_surface;
+}
+
+.view:selected {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+.sidebar {
+    background-color: @surface_container_low;
+    color: @on_surface;
+}
+
+.sidebar:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+headerbar {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+button {
+    background-color: @surface_container_highest;
+    color: @on_surface;
+    border: 1px solid @outline;
+}
+
+button:hover {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+button:active {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+entry {
+    background-color: @surface_container;
+    color: @on_surface;
+    border: 1px solid @outline;
+}
+
+entry:focus {
+    border: 2px solid @primary;
+}

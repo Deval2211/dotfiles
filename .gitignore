@@ -1,0 +1,17 @@
+# Logs
+*.log
+theme-engine.log
+wallpaper-watcher.log
+
+# Cache and temporary files
+.current_theme
+.cache/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Other
+.DS_Store
+*.pyc
+__pycache__/
