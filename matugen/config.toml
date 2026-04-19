@@ -1,6 +1,6 @@
 [config.wallpaper]
+command = "swww query"
 set = false
-command = "swww img --transition-type center --transition-duration 1 --transition-fps 60 {{ image }}"
 
 [templates.hyprland]
 input_path = '/home/deval/.config/matugen/templates/hyprland-colors.conf'
@@ -21,3 +21,11 @@ output_path = '/home/deval/.config/wofi/colors.css'
 [templates.gtk]
 input_path = '/home/deval/.config/matugen/templates/gtk-colors.css'
 output_path = '/home/deval/.config/gtk-3.0/colors.css'
+
+[templates.rofi]
+input_path = '/home/deval/.config/matugen/templates/rofi-colors.rasi'
+output_path = '/home/deval/.config/rofi/colors.rasi'
+
+[templates.ags]
+input_path = '/home/deval/.config/matugen/templates/ags-colors.css'
+output_path = '/home/deval/.config/ags/colors.css'

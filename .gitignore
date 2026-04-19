@@ -1,17 +1,26 @@
-# Logs
-*.log
-theme-engine.log
-wallpaper-watcher.log
+# Legacy directories (removed from project)
+waybar/
+wofi/
+kitty/
 
-# Cache and temporary files
-.current_theme
+# Generated files
+themes/
+logs/
+*.log
+
+# Cache
 .cache/
+.current_theme
+
+# AGS generated
+ags/node_modules/
+ags/dist/
+
+# Temporary files
 *.tmp
 *.swp
-*.swo
 *~
 
-# Other
+# OS files
 .DS_Store
-*.pyc
-__pycache__/
+Thumbs.db

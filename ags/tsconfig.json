@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "ags/gtk3",
+    "strict": true,
+    "paths": {
+      "ags/*": ["/usr/local/share/ags/types/*"]
+    }
+  }
+}

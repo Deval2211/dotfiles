@@ -1,0 +1,124 @@
+configuration {
+    modi:                   "drun,run,window";
+    show-icons:             true;
+    icon-theme:             "Papirus-Dark";
+    terminal:               "kitty";
+    drun-display-format:    "{name}";
+    location:               0;
+    disable-history:        false;
+    hide-scrollbar:         true;
+    display-drun:           "  Apps";
+    display-run:            "  Run";
+    display-window:         "  Window";
+    sidebar-mode:           true;
+}
+
+@import "colors.rasi"
+
+* {
+    font:                   "JetBrainsMono Nerd Font 12";
+    background-color:       transparent;
+    text-color:             @on-surface;
+    border-color:           @primary;
+}
+
+window {
+    background-color:       rgba(18, 19, 24, 0.92);
+    border:                 2px solid;
+    border-color:           @primary;
+    border-radius:          12px;
+    width:                  620px;
+    padding:                16px;
+}
+
+mainbox {
+    background-color:       transparent;
+    children:               [ inputbar, listview ];
+    spacing:                10px;
+}
+
+inputbar {
+    background-color:       rgba(30, 31, 37, 0.95);
+    text-color:             @on-surface;
+    border-radius:          8px;
+    padding:                10px 14px;
+    children:               [ prompt, entry ];
+    border:                 1px solid;
+    border-color:           @outline-variant;
+}
+
+prompt {
+    background-color:       transparent;
+    text-color:             @primary;
+    padding:                0 8px 0 0;
+}
+
+entry {
+    background-color:       transparent;
+    text-color:             @on-surface;
+    placeholder:            "Search...";
+    placeholder-color:      @on-surface-variant;
+}
+
+listview {
+    background-color:       transparent;
+    columns:                1;
+    lines:                  8;
+    spacing:                4px;
+    cycle:                  true;
+    dynamic:                true;
+    layout:                 vertical;
+}
+
+element {
+    background-color:       rgba(0, 0, 0, 0);
+    text-color:             @on-surface;
+    border-radius:          8px;
+    padding:                8px 12px;
+    spacing:                8px;
+    children:               [ element-icon, element-text ];
+}
+
+element normal.normal {
+    background-color:       rgba(0, 0, 0, 0);
+    text-color:             @on-surface;
+}
+
+element normal.active {
+    background-color:       rgba(0, 0, 0, 0);
+    text-color:             @primary;
+}
+
+element alternate.normal {
+    background-color:       rgba(0, 0, 0, 0);
+    text-color:             @on-surface;
+}
+
+element alternate.active {
+    background-color:       rgba(0, 0, 0, 0);
+    text-color:             @primary;
+}
+
+element selected.normal {
+    background-color:       rgba(70, 90, 140, 0.45);
+    text-color:             @on-primary-container;
+    border:                 1px solid;
+    border-color:           @primary;
+}
+
+element selected.active {
+    background-color:       rgba(70, 90, 140, 0.45);
+    text-color:             @on-primary-container;
+}
+
+element-icon {
+    background-color:       transparent;
+    size:                   26px;
+    padding:                0 4px 0 0;
+}
+
+element-text {
+    background-color:       transparent;
+    text-color:             inherit;
+    vertical-align:         0.5;
+}
