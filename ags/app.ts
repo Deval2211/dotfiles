@@ -6,6 +6,6 @@ app.start({
     instanceName: "dashboard",
     css: style,
     main() {
-        app.get_monitors().map(Dashboard)
+        app.get_monitors().forEach(Dashboard)
     },
 })
