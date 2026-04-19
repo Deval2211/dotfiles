@@ -1,7 +1,7 @@
 import app from "ags/gtk3/app"
 import { Astal, Gtk, Gdk } from "ags/gtk3"
 import { execAsync } from "ags/process"
-import { createPoll } from "ags/time"
+import { createPoll, interval } from "ags/time"
 import { cpuUsage } from "../modules/cpu"
 import { memUsage, memLabel } from "../modules/memory"
 import { netSpeed, wifiSSID } from "../modules/network"
@@ -27,8 +27,10 @@ function StatRing(opts: {
     const value = new Gtk.Label({ label: "0%" })
     value.get_style_context().add_class("ring-value")
 
-    opts.poll.connect("changed", () => {
-        value.set_label(`${Math.round(opts.poll.value)}%`)
+    // Update value using the accessor function
+    interval(2000, () => {
+        const num = opts.poll(n => Math.round(n))
+        value.set_label(`${num}%`)
     })
 
     const container = box(Gtk.Orientation.VERTICAL, 8, [value, label])
@@ -48,12 +50,10 @@ function NetCard() {
     const ssid = new Gtk.Label({ label: "WiFi" })
     ssid.get_style_context().add_class("net-ssid")
 
-    netSpeed.connect("changed", () => {
-        speed.set_label(`${netSpeed.value} KB/s`)
-    })
-
-    wifiSSID.connect("changed", () => {
-        ssid.set_label(wifiSSID.value)
+    interval(2000, () => {
+        const s = netSpeed(n => n)
+        ssid.set_label(wifiSSID(w => w))
+        speed.set_label(`${s} KB/s`)
     })
 
     const container = box(Gtk.Orientation.VERTICAL, 8, [speed, ssid])
@@ -69,14 +69,16 @@ function Header() {
     const time = createPoll("", 1000, "date +'%H:%M'")
     const date = createPoll("", 60000, "date +'%A, %d %B'")
 
-    const timeLabel = new Gtk.Label({ label: time.value })
+    const timeLabel = new Gtk.Label({ label: "" })
     timeLabel.get_style_context().add_class("dash-time")
 
-    const dateLabel = new Gtk.Label({ label: date.value })
+    const dateLabel = new Gtk.Label({ label: "" })
     dateLabel.get_style_context().add_class("dash-date")
 
-    time.connect("changed", () => timeLabel.set_label(time.value))
-    date.connect("changed", () => dateLabel.set_label(date.value))
+    interval(1000, () => {
+        timeLabel.set_label(time(t => t))
+        dateLabel.set_label(date(d => d))
+    })
 
     const header = box(Gtk.Orientation.VERTICAL, 4, [timeLabel, dateLabel])
     header.get_style_context().add_class("dash-header")
@@ -135,11 +137,13 @@ export default function Dashboard(gdkmonitor: Gdk.Monitor) {
 
     return (
         <window
+            namespace="dashboard"
             class="Dashboard"
             gdkmonitor={gdkmonitor}
             anchor={TOP | RIGHT}
             exclusivity={Astal.Exclusivity.IGNORE}
             application={app}
+            visible={true}
         >
             {content}
         </window>
