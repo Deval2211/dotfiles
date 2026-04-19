@@ -216,7 +216,7 @@ export default function Dashboard(gdkmonitor: Gdk.Monitor) {
             margin_top={8}
             margin_right={8}
             layer={Astal.Layer.OVERLAY}
-            visible={false}
+            visible={true}
             application={app}
         >
             {content}
