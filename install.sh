@@ -237,6 +237,7 @@ log_success "astal GTK3 installed"
 # Update library cache
 log_info "Updating library cache..."
 sudo ldconfig
+log_success "Library cache updated"
 
 ###############################################
 # 6. VERIFY INSTALLATION
